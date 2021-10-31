@@ -1,5 +1,7 @@
 Dual React / Angular app bootstrapped with simple Index.html at top level
 
+Adapted from: https://dev.to/dcodeyt/building-a-single-page-app-without-frameworks-hl9
+
 Dev:
 $ npm i
 $ npm run watch
