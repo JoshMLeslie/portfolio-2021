@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-2021",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "main.js",
+  "os": [
+    "linux"
+  ],
+  "scripts": {
+    "watch:angular": "cd angular-portfolio && npm start",
+    "watch:react": "cd react-portfolio && npm start",
+    "watch": "concurrently --kill-others-on-fail \"live-server ./\" \"npm:watch:*\"",
+    "build:prod:angular": "cd angular-portfolio && npm run build:prod && rsync -avr dist/angular-portfolio/ ../dist/angular",
+    "build:prod:react": "cd react-portfolio && npm run build:prod && rsync -avr build/ ../dist/react ",
+    "predeploy": "concurrently -s --kill-others-on-fail \"rsync -av index.html main.js dist\" \"npm:build:prod:*\"",
+    "deploy": "gh-pages -d dist",
+    "test": "npm run predeploy && live-server dist"
+  },
+  "author": "Josh Leslie",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "gh-pages": "^3.2.3",
+    "live-server": "^1.2.1"
+  }
+}
