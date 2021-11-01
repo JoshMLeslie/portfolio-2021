@@ -1,0 +1,80 @@
+* {
+	font-family: 'Russo One', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	padding: 1rem;
+}
+
+a:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+a:visited {
+	color: darkblue;
+}
+
+html,
+body,
+#main-container {
+	height: 100%;
+}
+
+body {
+	margin: 0 !important;
+}
+
+#main-container {
+	display: flex;
+	flex-direction: column;
+}
+
+#main-container h1 {
+	font-size: 10vw;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#main-container #contact {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#main-container .contact {
+	display: flex;
+	justify-content: space-around;
+}
+#main-container .contact * {
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+#main-container #nav {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+#main-container #nav * {
+	text-transform: uppercase;
+}
+
+a.nav-link {
+	box-sizing: border-box;
+	font-size: clamp(1rem, 7vw, 10vw);
+}
+
+
+@media screen and (max-width: 500px) {
+
+	#main-container .contact,
+	#main-container #nav {
+		flex-direction: column;
+		align-items: center;
+	}
+}
